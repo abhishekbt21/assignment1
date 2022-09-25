@@ -1,0 +1,47 @@
+class Node:
+    def __init__(self, s, x):
+        self.age = 0
+        self.name = ""
+        self.next = None
+        self.prev = None
+
+        self.name = s
+        self.age = x
+        self.prev = None
+        self.next = None
+
+def main():
+    father = Node("RAM KUMAR ", 50)
+    mother = Node("SUNITA DEVI", 44)
+    brother = Node("SONU", 19)
+    sister = Node("ANU", 15)
+    myself = Node("ABHISHEK", 20)
+
+    head = father
+
+    father.prev = None
+    father.next = mother
+    mother.prev = father
+    mother.next = myself
+    brother.prev = myself
+    brother.next = sister
+    sister.prev = brother
+    sister.next = none
+    myself.prev = mother
+    myself.next = brother
+
+    Globals.printdll(head)
+
+
+class Globals:
+
+    def printdll(head):
+        while head is not None:
+            print(head.name, end = '')
+            print("-", end = '')
+            print(head.age, end = '')
+            print("     ", end = '')
+            head = head.next
+
+if __name__ == "__main__":
+    main()
